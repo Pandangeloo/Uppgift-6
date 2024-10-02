@@ -46,16 +46,14 @@ namespace NameSorter
                     default:
                         Console.WriteLine("Nu valde du något som inte fanns, försök igen.");
                         Console.WriteLine();
-                        continue;       
+                        break;       
 
                                        
                 }
                                    
 
-
             Console.ReadKey();
-                continue;
-
+              
 
             }
 
@@ -75,7 +73,7 @@ namespace NameSorter
         //Visa listan som den är
         private static void ShowList()
         {
-            Console.WriteLine("Original List:");
+            Console.WriteLine("\nNamnlistan:");
 
             foreach (var name in names)
             {
@@ -88,7 +86,7 @@ namespace NameSorter
         private static void SortNames()
         {
             names.Sort(); //Sortera alfabetiskt
-            Console.WriteLine("\nSorted list:");
+            Console.WriteLine("\nSorterad namnlista:");
 
             foreach (var name in names)
             {
@@ -97,28 +95,26 @@ namespace NameSorter
         }
 
 
-
-
         //Söka efter ett namn
         private static void SearchNames()
         {
-           Console.WriteLine("Enter name to search");
+           Console.WriteLine("\nSkriv namnet du söker efter");
             string searchName = Console.ReadLine();
 
             if (names.Contains(searchName))
             {
-                Console.WriteLine($"{searchName} is in the list");
+                Console.WriteLine($"{searchName} finns i listan");
             }
             else
             {
-                Console.WriteLine($"{searchName} is not in the list");
+                Console.WriteLine($"{searchName} finns INTE i listan");
             }
         }
 
         //Lägga till nytt namn
         private static void AddNewNames()
         {
-            Console.WriteLine("Skriv namnet på den du vill lägga till:");
+            Console.WriteLine("\nSkriv namnet på den du vill lägga till:");
             string newName = Console.ReadLine();
             names.Add(newName);
             Console.WriteLine($"Du har nu lagt till namn {newName}");
