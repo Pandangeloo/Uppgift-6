@@ -15,25 +15,46 @@ namespace NameSorter
         
         public static void Main(string[] args)
         {
+            bool programWorks = true;
 
-
-            while (true) { 
-            
-
-            
-
-            
-
-
-            Console.ReadKey();
-
-            AddNewNames();
-            SearchNames();
-            SortNames();
-            ShowList();
+            while (programWorks) 
+            {
+                Console.WriteLine();
                 ShowMenu();
 
+                char menuChoice = Console.ReadKey().KeyChar;
+
+                switch (menuChoice) 
+                {
+                    case '1':
+                        ShowList();
+                        break;
+                    case '2':
+                        SortNames();
+                        break;
+                    case '3':
+                        AddNewNames();
+                            break;
+                    case '4':
+                        SearchNames();
+                        break;
+                    case '5':
+                        Console.WriteLine("Det är uppfattat, jag avslutar nu programmet. Hejdå!");
+                        programWorks = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Nu valde du något som inte fanns, försök igen.");
+                        Console.WriteLine();
+                        continue;       
+
+                                       
+                }
+                                   
+
+
             Console.ReadKey();
+                continue;
 
 
             }
@@ -51,6 +72,7 @@ namespace NameSorter
                 "\n 5. Avsluta programmet");
         }
 
+        //Visa listan som den är
         private static void ShowList()
         {
             Console.WriteLine("Original List:");
@@ -62,7 +84,7 @@ namespace NameSorter
             }
         }
 
-        //metod för att sortera namnen i listan
+        //Visa en sorterad Lista
         private static void SortNames()
         {
             names.Sort(); //Sortera alfabetiskt
@@ -77,7 +99,7 @@ namespace NameSorter
 
 
 
-        //Metod för att söka namn.  
+        //Söka efter ett namn
         private static void SearchNames()
         {
            Console.WriteLine("Enter name to search");
@@ -93,6 +115,7 @@ namespace NameSorter
             }
         }
 
+        //Lägga till nytt namn
         private static void AddNewNames()
         {
             Console.WriteLine("Skriv namnet på den du vill lägga till:");
