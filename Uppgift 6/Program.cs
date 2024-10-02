@@ -1,13 +1,18 @@
 ﻿
 //Detta är en branch
 
+
 namespace NameSorter
 {
     class Program
-    {
-        static void Main(string[] args)
+    {   
+        
+        
+        public static void Main(string[] args)
         {
-            List<string> names = new List<string> { "Anna", "John", "Alice", "Berit" };
+            
+           List<string> names = new List<string> { "Anna", "John", "Alice", "Berit" };
+
             Console.WriteLine("Original List:");
 
             foreach (var name in names)
@@ -33,16 +38,31 @@ namespace NameSorter
             }
             else
             {
-                Console.WriteLine($"{searchName} is not in the list")
+                Console.WriteLine($"{searchName} is not in the list");
             }
 
 
             Console.ReadKey();
 
+            AddNewNames();
+
+//Metod för att lägga till nytt namn
+             void AddNewNames()
+            {
+                Console.WriteLine("Skriv namnet på den du vill lägga till:");
+                string newName = Console.ReadLine();
+                names.Add(newName);
+                Console.WriteLine($"Du har nu lagt till namn {newName}");
+            }
 
 
-
+            
 
         }
+        
+        
+        
+        
+       
     }
 }
