@@ -4,6 +4,8 @@
 
 
 
+
+
 namespace NameSorter
 {
     class Program
@@ -13,15 +15,10 @@ namespace NameSorter
         
         public static void Main(string[] args)
         {
+
+
+            while (true) { 
             
-           
-            Console.WriteLine("Original List:");
-
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
-
-            }
 
             
 
@@ -33,14 +30,39 @@ namespace NameSorter
             AddNewNames();
             SearchNames();
             SortNames();
+            ShowList();
+                ShowMenu();
+
+            Console.ReadKey();
 
 
-
-
-            
+            }
 
         }
 
+        private static void ShowMenu()
+        {
+            Console.WriteLine("Hej och VÄLKOMMEN till min lista med olika namn." +
+                "\n Gör ett av följande val:" +
+                "\n 1. Visa listan" +
+                "\n 2. Visa en sorterad lista" +
+                "\n 3. Lägg till ett namn" +
+                "\n 4. Sök efter ett namn i listan" +
+                "\n 5. Avsluta programmet");
+        }
+
+        private static void ShowList()
+        {
+            Console.WriteLine("Original List:");
+
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+
+            }
+        }
+
+        //metod för att sortera namnen i listan
         private static void SortNames()
         {
             names.Sort(); //Sortera alfabetiskt
